@@ -7,6 +7,7 @@
 <title>Welcome to Ira's Browser</title>
 </head>
 <body>
+<p> <font color = "red">${errorMessage} </font></p>
 <p>Search about your favorite planet! Type below. </p>
 <form action="/welcome"></form>
 Search here: <input type = "text" name = "query"/> <input type = "submit" value = "Go!" />
