@@ -1,4 +1,4 @@
-package com.ira.learning.browser.browserdemo;
+package com.ira.learning.browserdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,29 +13,20 @@ public class BrowserController {
 	@Autowired
 	private BrowserService service;
 
-	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
+	@RequestMapping(value = "/welcome")
 	public String showWelcomePage() {
 		return "welcome";
 	}
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public String handleLoginRequest(@RequestParam String query, ModelMap model) {
+	public String handleSearchRequest(@RequestParam String query, ModelMap model) {
 
 		if (!service.validateQuery(query)) {
 			model.put("errorMessage", "No such match found! Please change keywords.");
 			return "welcome";
 		}
 		// model.put("", );
-		return "";
+		return "welcome";
 	}
-}
 
-/*
- * import org.springframework.boot.SpringApplication; import
- * org.springframework.boot.autoconfigure.SpringBootApplication;
- * 
- * @SpringBootApplication public class BrowserDemoApplication {
- * 
- * public static void main(String[] args) {
- * SpringApplication.run(BrowserDemoApplication.class, args); } }
- */
+}
