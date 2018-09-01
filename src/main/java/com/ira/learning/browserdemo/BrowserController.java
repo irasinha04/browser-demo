@@ -18,15 +18,19 @@ public class BrowserController {
 		return "welcome";
 	}
 
-	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
 	public String handleSearchRequest(@RequestParam String query, ModelMap model) {
-
+		//
 		if (!service.validateQuery(query)) {
 			model.put("errorMessage", "No such match found! Please change keywords.");
 			return "welcome";
 		}
-		// model.put("", );
-		return "welcome";
+		//
+		// // if (query.equalsIgnoreCase("Mercury")) {
+		// // return "Mercury";
+		// // }
+		// // return "welcome";
+		return "Mercury";
 	}
 
 }
