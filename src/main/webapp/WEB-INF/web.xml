@@ -5,7 +5,7 @@
 	version="3.0">
 
 	<display-name>Browser</display-name>
-	
+ 	
 	<welcome-file-list>
 		<welcome-file>welcome</welcome-file>
 	</welcome-file-list>
@@ -18,7 +18,7 @@
 	        </servlet-class>
 	        <init-param>
 	            <param-name>contextConfigLocation</param-name>
-	            <param-value>/WEB-INF/browse.xml</param-value>
+	            <param-value>/WEB-INF/Browser-servlet.xml</param-value>
 	        </init-param>
 	        <load-on-startup>1</load-on-startup>
 	</servlet>

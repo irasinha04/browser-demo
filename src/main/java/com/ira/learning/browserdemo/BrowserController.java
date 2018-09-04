@@ -1,6 +1,7 @@
 package com.ira.learning.browserdemo;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.io.IOException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,27 +11,56 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class BrowserController {
 
-	@Autowired
-	private BrowserService service;
-
 	@RequestMapping(value = "/welcome")
 	public String showWelcomePage() {
 		return "welcome";
 	}
 
-	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
-	public String handleSearchRequest(@RequestParam String query, ModelMap model) {
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public String handleSearchRequest(@RequestParam String query, ModelMap model) throws IOException {
 
-		// System.out.println("query = " + query);
 		if (query.equalsIgnoreCase("Mercury")) {
-			// System.out.println("Go to mercury page");
 			return "Mercury";
 		}
 
-		model.put("errorMessage", "No such match found! Please change keywords.");
-		// System.out.println("Go to welcome page");
-		return "welcome";
+		else if (query.equalsIgnoreCase("Venus")) {
+			return "Venus";
+		}
 
+		else if (query.equalsIgnoreCase("Earth")) {
+			return "Earth";
+		}
+
+		else if (query.equalsIgnoreCase("Mars")) {
+			return "Mars";
+		}
+
+		else if (query.equalsIgnoreCase("Jupiter")) {
+			return "Jupiter";
+		}
+
+		else if (query.equalsIgnoreCase("Saturn")) {
+			return "Saturn";
+		}
+
+		else if (query.equalsIgnoreCase("Uranus")) {
+			return "Uranus";
+		}
+
+		else if (query.equalsIgnoreCase("Neptune")) {
+			return "Neptune";
+		}
+
+		else if (query.equalsIgnoreCase("Pluto")) {
+			return "Pluto";
+		}
+
+		model.put("errorMessage", "No such page found. Try again.");
+		return "welcome";
 	}
+
+	// public void myController(HttpServletResponse response) throws IOException {
+	// response.sendRedirect("/myURL");
+	// }
 
 }
