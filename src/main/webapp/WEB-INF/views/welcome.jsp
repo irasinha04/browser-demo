@@ -9,8 +9,21 @@
 <body>
 <form action="/search" method = "GET">
 <p> <font color = "red">${errorMessage} </font></p>
-<p>Search about your favorite planet! Type below. </p>
-Search here: <input type = "text" name = "query"/> <input type = "submit" value = "Go!" />
+<p>Search about your favorite planet! </p>
+Search here:
+<input list="planets" name="query">
+  	<datalist id="planets">
+  	<option value="Mercury">Mercury</option>
+  	<option value="Venus">Venus</option>
+  	<option value="Earth">Earth</option>
+  	<option value="Mars">Mars</option>
+  	<option value="Jupiter">Jupiter</option>
+  	<option value="Saturn">Saturn</option>
+  	<option value="Uranus">Uranus</option>
+  	<option value="Neptune">Neptune</option>
+  	<option value="Pluto">Pluto</option>
+</datalist>
+<input type = "submit" value = "Go!" />
 </form>
 </body>
 </html>
