@@ -3,7 +3,6 @@ package com.ira.learning.browserdemo;
 import java.io.IOException;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +16,7 @@ public class BrowserController {
 	}
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public String handleSearchRequest(@RequestParam String query, ModelMap model) throws IOException {
+	public String handleSearchRequest(@RequestParam String query) throws IOException {
 
 		if (query.equalsIgnoreCase("Mercury")) {
 			return "Mercury";
@@ -55,7 +54,6 @@ public class BrowserController {
 			return "Pluto";
 		}
 
-		model.put("errorMessage", "No such page found. Try again.");
 		return "welcome";
 	}
 

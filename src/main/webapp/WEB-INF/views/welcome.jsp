@@ -8,7 +8,6 @@
 </head>
 <body>
 <form action="/search" method = "GET">
-<p> <font color = "red">${errorMessage} </font></p>
 <p>Search about your favorite planet! </p>
 Search here:
 <input list="planets" name="query">
