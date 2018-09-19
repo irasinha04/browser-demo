@@ -4,6 +4,7 @@
 2. Dependencies: Spring-mvc, Tomcat7 (All enabled in pom.xml)
 
 3. To run: 
+
    a. On an IDE such as Eclipse, right click on the project root.
    
    b. Click Run As> Maven build.
